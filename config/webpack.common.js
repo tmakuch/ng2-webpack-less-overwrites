@@ -3,8 +3,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
 
-// var lessConfigurationLoader = require('../lib/less-configuration-loader');
-
 module.exports = {
     entry: {
         'polyfills': './src/polyfills.ts',
