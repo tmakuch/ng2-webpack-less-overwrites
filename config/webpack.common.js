@@ -3,11 +3,20 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
 
+// var lessConfigurationLoader = require('../lib/less-configuration-loader');
+
 module.exports = {
     entry: {
         'polyfills': './src/polyfills.ts',
         'vendor': './src/vendor.ts',
         'app': './src/main.ts'
+    },
+
+    resolveLoader: {
+        alias: {
+            // this alias can be omitted if loader is places inside web_modules or web_loaders
+            // 'less-configuration': require('path').join(__dirname, '../custom-webpack-loaders/less-configuration-loader.js')
+        }
     },
 
     resolve: {
@@ -39,7 +48,7 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                loaders: ['css-to-string','css', 'less']
+                loaders: ['css-to-string', 'css', 'less', 'less-configuration?file=./src/variables.less']
             }
         ]
     },

@@ -1,4 +1,19 @@
-# Angular2 seed
+# Adding/Overwriting less variables across the application
 
-Ng2 + webpack + less, basicly [webpack intro from angular team](https://angular.io/docs/ts/latest/guide/webpack.html).
-I couldn't find any clean version of it so I made it.
+### Problem:
+I want to be able to specify my custom color for my depdendencies (i.e. imported components).
+
+### Solution - approach
+Imported dependencies (components) need to use (publicly documented) variables.
+
+### Solution - technical aspects
+Lets add my custom file (with my variables) to all imported less files.
+
+### When does it work
+When we are creating said components as part as larger framework.
+
+
+## Possible problems
+Overwriting vendor less variables. Possible solutions:
+- prefixes for variables,
+- good exclusion patterns in webpack loaders.
