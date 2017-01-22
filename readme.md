@@ -12,8 +12,11 @@ Lets add my custom file (with my variables) to all imported less files.
 ### When does it work
 When we are creating said components as part as larger framework.
 
+## Why does it works?
+Less variables are [lazy](http://lesscss.org/features/#variables-feature-lazy-loading).
 
 ## Possible problems
-Overwriting vendor less variables. Possible solutions:
+Overwriting vendor less variables.
+Possible solutions:
 - prefixes for variables,
 - good exclusion patterns in webpack loaders.
